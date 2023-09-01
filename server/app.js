@@ -1,4 +1,4 @@
-const usersRoute = require("./routes/user");
+const expensesRoute = require("./routes/expense");
 const express = require("express");
 const cors = require("cors");
 const { sequelize } = require("./utils/database");
@@ -17,7 +17,7 @@ sequelize
   )
   .catch((error) => console.log("Failed to connect the database:", error));
 
-app.use("/users", usersRoute);
+app.use("/expenses", expensesRoute);
 app.use("/", (req, res) => {
   res.send("Server Running");
 });
